@@ -31,7 +31,7 @@ var Router = Backbone.Router.extend({
     var contact = new Contact();
 
     // Create a form and send it our blank contact
-    var form = new ContactForm({model: contact});
+    var form = new ContactForm({model: contact, collection: this.contacts});
 
     // Show the form in our outlet
     $('#outlet').html(form.el);
@@ -67,7 +67,7 @@ var Router = Backbone.Router.extend({
       // Only create view if contact is found
       if (contact) {
         // Create detailView
-        var detailView = new ContactForm({model: contact});
+        var detailView = new ContactForm({model: contact, collection: this.contacts});
 
         // Put detailView into outlet
         $('#outlet').html(detailView.el);

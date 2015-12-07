@@ -21,6 +21,9 @@ Pages/Routes:
     * Inputs for all fields
     * Submit Button
   - [X] Listen for when user submits form
+  - [X] After save user should
+    - [X] Be redirected to home page
+    - [ ] See new model in list
 * Detail view
   set
   - [X] Find the contact from server by its id (Model)

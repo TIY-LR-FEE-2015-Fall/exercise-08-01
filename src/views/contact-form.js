@@ -18,6 +18,9 @@ export default Backbone.View.extend({
       // Save our model
       this.model.save({firstName, lastName, email, twitter})
         .then(() => {
+          // Adds new model to collection
+          this.collection.add(this.model);
+
           // Go to the home page
           Backbone.history.navigate('', {trigger: true});
         });
