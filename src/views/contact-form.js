@@ -29,15 +29,15 @@ export default Backbone.View.extend({
   },
 
   render() {
-    this.$el.html(this.template());
+    this.$el.html(this.template(this.model));
   },
 
-  template() {
+  template(model) {
     return `
-      <input id="firstName" placeholder="First Name">
-      <input id="lastName" placeholder="Last Name">
-      <input id="email" placeholder="Email">
-      <input id="twitter" placeholder="Twitter">
+      <input id="firstName" value="${model.get('firstName')}" placeholder="First Name">
+      <input id="lastName" value="${model.get('lastName')}" placeholder="Last Name">
+      <input id="email" value="${model.get('email')}" placeholder="Email">
+      <input id="twitter" value="${model.get('twitter')}" placeholder="Twitter">
 
       <button>Submit</button>
     `;

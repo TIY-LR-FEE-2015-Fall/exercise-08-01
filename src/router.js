@@ -58,6 +58,28 @@ var Router = Backbone.Router.extend({
     // Try to show edit form on collection sync
     this.contacts.on('sync', showEditForm);
   },
+
+  contactsEdit(id) {
+    var showEditForm = () => {
+      // Grab a contact by its id from the collection
+      var contact = this.contacts.get(id);
+
+      // Only create view if contact is found
+      if (contact) {
+        // Create detailView
+        var detailView = new ContactForm({model: contact});
+
+        // Put detailView into outlet
+        $('#outlet').html(detailView.el);
+      }
+    };
+
+    // Try to show edit form immediately
+    showEditForm();
+
+    // Try to show edit form on collection sync
+    this.contacts.on('sync', showEditForm);
+  },
 });
 
 export default Router;
