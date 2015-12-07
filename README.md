@@ -14,15 +14,19 @@ Pages/Routes:
   - [X] Get all users from the server (Model & Collection)
   - [X] Need a template for all users (View)
   - [X] Need a template for a single user (View)
-  - [ ] User should see a list of all contacts
+  - [X] User should see a list of all contacts
 * Create New Contact
   - [X] Need a contact to save (Model)
   - [X] Need a template for what the user sees (View)
     * Inputs for all fields
     * Submit Button
-  - [ ] Listen for when user submits form
-* Edit contact
+  - [X] Listen for when user submits form
 * Detail view
+  set
+  - [X] Find the contact from server by its id (Model)
+  - [X] Show the full details for a contact (View)
+  - [ ] Show link to edit page (View)
+* Edit contact
 
 Collection URL: `http://tiny-lr.herokuapp.com/collections/contacts-exercise`
 
