@@ -16,8 +16,8 @@ Pages/Routes:
   - [X] Need a template for a single user (View)
   - [ ] User should see a list of all contacts
 * Create New Contact
-  - [ ] Need a contact to save (Model)
-  - [ ] Need a template for what the user sees (VIew)
+  - [X] Need a contact to save (Model)
+  - [X] Need a template for what the user sees (View)
     * Inputs for all fields
     * Submit Button
   - [ ] Listen for when user submits form

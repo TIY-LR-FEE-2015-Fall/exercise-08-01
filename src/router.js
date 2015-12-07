@@ -1,5 +1,7 @@
+import Contact from './models/contact';
 import ContactCollection from './collections/contact-list';
 import ContactView from './views/contacts';
+import ContactForm from './views/contact-form';
 
 var Router = Backbone.Router.extend({
   routes: {
@@ -23,6 +25,17 @@ var Router = Backbone.Router.extend({
     var listView = new ContactView();
 
     $('#outlet').html(listView.el);
+  },
+
+  contactsNew() {
+    // Create a blank contact
+    var contact = new Contact();
+
+    // Create a form and send it our blank contact
+    var form = new ContactForm({model: contact});
+
+    // Show the form in our outlet
+    $('#outlet').html(form.el);
   },
 });
 
