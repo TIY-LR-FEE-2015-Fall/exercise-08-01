@@ -1,6 +1,6 @@
 import Contact from './models/contact';
 import ContactCollection from './collections/contact-list';
-import ContactView from './views/contacts';
+import ContactsAllView from './views/contacts';
 import ContactForm from './views/contact-form';
 
 var Router = Backbone.Router.extend({
@@ -22,7 +22,7 @@ var Router = Backbone.Router.extend({
     // Fetched from the server
     allContacts.fetch();
 
-    var listView = new ContactView();
+    var listView = new ContactsAllView({collection: allContacts});
 
     $('#outlet').html(listView.el);
   },

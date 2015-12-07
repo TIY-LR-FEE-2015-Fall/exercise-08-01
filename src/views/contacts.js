@@ -7,6 +7,8 @@ export default Backbone.View.extend({
 
   initialize() {
     this.render();
+
+    this.listenTo(this.collection, 'sync', this.render);
   },
 
   render() {
@@ -14,8 +16,10 @@ export default Backbone.View.extend({
   },
 
   template(collection) {
-    return `
-      <li>Last, First</li>
-    `;
+    var createListItem = (model) => {
+      return `<li>${model.get('lastName')}, ${model.get('firstName')} - <a href="#${model.id}">Detail</a></li>`;
+    };
+
+    return collection.map(createListItem);
   },
 });
